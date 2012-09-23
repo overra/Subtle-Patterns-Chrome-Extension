@@ -1,0 +1,59 @@
+body {
+    background: #f0f0f0;
+    font-family: Helvetica, sans-serif;
+    font-size: 10pt;
+    height: 215px;
+    margin: 5px;
+    padding: 0px;
+    width: 255px;
+}
+
+#patterns {
+    height: 195px;
+}
+
+.pattern {
+    background-color: #fff;
+    background-position: center center;
+    //border-radius: 5px;
+    box-shadow:  inset 0px 1px 2px rgba(0,0,0,.2), 
+                 1px 1px 1px rgba(255,255,255,.2);
+    display: inline-block;
+    height: 60px;
+    margin: 5px;
+    overflow: hidden;
+    position: absolute;
+    -webkit-transition: top 250ms ease-in-out 250ms, 
+                        left 250ms ease-in-out 250ms, 
+                        width 250ms ease-in-out 250ms, 
+                        height 250ms ease-in-out 250ms,
+                        z-index 0ms linear 750ms;
+    width: 60px;
+    z-index: 0;
+}
+
+#details {
+    position: relative;
+    height: 20px;
+}
+
+#details button,
+#details div {
+    outline: none;
+    position: absolute;
+}
+
+#details #prev {
+    left: 0;
+}
+
+#details #next {
+    right: 0;
+}
+
+#details #name {
+    left: 30px;
+    line-height: 20px;
+    right: 30px;
+    text-align: center;
+}
