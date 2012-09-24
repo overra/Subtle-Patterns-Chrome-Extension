@@ -5,5 +5,8 @@ Subtle Patterns Preview provides a simpler way to do it. [Get it on the Chrome W
 
 [![Subtle Patterns Preview](https://lh4.googleusercontent.com/5e16S2wIHGbk78W7xv-9F28ZtmGsnoTwEuBQrS3lGIgDovr9p6XPDznXZAudL4t6cZEdRUVwgE8=s640-h400-e365)](https://chrome.google.com/webstore/detail/cnhhinfdmnakglphgajbakokcdhmdinf)
 
+##Known Issues
+- Preview does not work on pages hosted on local filesystem. [Solution](https://github.com/overra/Subtle-Patterns-Chrome-Extension/wiki/Install-with-local-filesystem-permissions).
+
 ##Credit
 Many thanks to [Atle Mo](http://www.atlemo.com/) from [Subtle Patterns](http://subtlepatterns.com) for the wonderful collection of patterns and the beautiful icon, and [Matt Rajca](http://mattrajca.com/) for the inspiration through his [Safari Extension](https://github.com/mattrajca/Safari-Extensions/tree/master/SubtlePatterns).
