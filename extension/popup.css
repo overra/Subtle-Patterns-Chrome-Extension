@@ -1,8 +1,9 @@
 body {
     background: #f0f0f0;
+    color: #666;
     font-family: Helvetica, sans-serif;
     font-size: 10pt;
-    height: 245px;
+    height: 275px;
     margin: 5px;
     padding: 0px;
     width: 265px;
@@ -25,8 +26,7 @@ body {
 .pattern {
     background-color: #fff;
     background-position: center center;
-    box-shadow:  inset 0px 1px 2px rgba(0,0,0,.2), 
-                 1px 1px 1px rgba(255,255,255,.2);
+    box-shadow:  inset 0px 0px 2px 1px rgba(0,0,0,.2);
     display: inline-block;
     height: 60px;
     margin: 5px;
@@ -42,20 +42,19 @@ body {
 }
 
 .pattern.selected {
-    box-shadow:  inset 0px 1px 2px rgba(0,0,0,.2), 
-                 0px 0px 2px 1px rgba(0,0,255,1);
+    box-shadow: 0px 0px 2px 1px rgba(0,0,255,1);
 }
 
 #details {
     position: relative;
-    height: 25px;
+    height: 20px;
+    margin: 5px 0px;
 }
 
 #details button,
 #details div {
     outline: none;
     position: absolute;
-    top: 4px;
 }
 
 #details #prev {
@@ -71,4 +70,17 @@ body {
     line-height: 20px;
     right: 30px;
     text-align: center;
+}
+
+.credit {
+    border-top: 1px #ccc solid;
+    padding-top: 5px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.credit a {
+    color: #444;
+    text-decoration: none;
 }
