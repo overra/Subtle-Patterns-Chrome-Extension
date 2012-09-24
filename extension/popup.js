@@ -6,7 +6,8 @@ var raw_url = 'https://raw.github.com/subtlepatterns/SubtlePatterns/master/',
     target_div   = document.getElementById('target'),
     patterns,
     page,
-    selected;
+    selected,
+    pageMax;
 
 function loadPatterns() {
 
@@ -20,6 +21,12 @@ function loadPatterns() {
     }
     else {
         prev_btn.removeAttribute('disabled');
+    }
+    if (page==pageMax) {
+        next_btn.setAttribute('disabled', 'disabled');
+    }
+    else {
+        next_btn.removeAttribute('disabled');
     }
 
     while (patterns_div.hasChildNodes()) {
@@ -39,7 +46,7 @@ function loadPatterns() {
             name_div.innerText = this.getAttribute('data-name');
         };
         pattern.onmouseout = function() {
-            name_div.innerText = selected.getAttribute('data-name')||'';
+            name_div.innerText = (selected)?selected.getAttribute('data-name'):'';
         };
         pattern.onclick = function() {
             if (selected) {
@@ -70,5 +77,6 @@ next_btn.onclick = function() {
 chrome.extension.sendMessage('getPatterns', function(p) {
     patterns = p.patterns;
     page = p.page;
+    pageMax = Math.floor(patterns.length / 12);
     loadPatterns();
 });
