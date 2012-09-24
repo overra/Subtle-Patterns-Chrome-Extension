@@ -2,7 +2,7 @@
     "name": "Subtle Patterns Preview",
     "version": "0.0.4",
     "manifest_version": 2,
-    "description": "Preview patterns from Subtle Patterns as page background.",
+    "description": "Preview tool for Subtle Patterns.",
     "icons": {
         "48": "icon-48.png",
         "128": "icon-128.png"

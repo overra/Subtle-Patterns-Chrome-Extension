@@ -5,7 +5,8 @@ var raw_url = 'https://raw.github.com/subtlepatterns/SubtlePatterns/master/',
     prev_btn     = document.getElementById('prev'),
     target_div   = document.getElementById('target'),
     patterns,
-    page;
+    page,
+    selected;
 
 function loadPatterns() {
 
@@ -38,9 +39,14 @@ function loadPatterns() {
             name_div.innerText = this.getAttribute('data-name');
         };
         pattern.onmouseout = function() {
-            name_div.innerText = '';
+            name_div.innerText = selected.getAttribute('data-name')||'';
         };
         pattern.onclick = function() {
+            if (selected) {
+                selected.className = 'pattern';
+            }
+            this.className = 'pattern selected';
+            selected = this;
             chrome.extension.sendMessage({
                 pattern: this.getAttribute('data-name'), 
                 selector: target_div.value 
