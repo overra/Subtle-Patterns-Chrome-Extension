@@ -1,8 +1,9 @@
 var raw_url = 'https://raw.github.com/subtlepatterns/SubtlePatterns/master/',
     patterns_div = document.getElementById('patterns'),
-    name_div = document.getElementById('name'),
-    next_btn = document.getElementById('next'),
-    prev_btn = document.getElementById('prev'),
+    name_div     = document.getElementById('name'),
+    next_btn     = document.getElementById('next'),
+    prev_btn     = document.getElementById('prev'),
+    target_div   = document.getElementById('target'),
     patterns,
     page;
 
@@ -30,8 +31,8 @@ function loadPatterns() {
         pattern = document.createElement('div');
         pattern.className = 'pattern';
         pattern.style.backgroundImage = 'url(' + raw_url + file.name + ')';
-        pattern.style.top = ((x - x%4) / 4) * 65;
-        pattern.style.left = (x%4) * 65;
+        pattern.style.top = ((x - x%4) / 4) * 65 + 'px';
+        pattern.style.left = (x%4) * 65 + 'px';
         pattern.setAttribute('data-name', file.name);
         pattern.onmouseover = function() {
             name_div.innerText = this.getAttribute('data-name');
@@ -40,7 +41,10 @@ function loadPatterns() {
             name_div.innerText = '';
         };
         pattern.onclick = function() {
-            chrome.extension.sendMessage({pattern: this.getAttribute('data-name')});
+            chrome.extension.sendMessage({
+                pattern: this.getAttribute('data-name'), 
+                selector: target_div.value 
+            });
         };
         patterns_div.appendChild(pattern);
     }

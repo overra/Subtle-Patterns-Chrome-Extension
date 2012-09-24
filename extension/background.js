@@ -1,6 +1,7 @@
 var raw_url  = 'https://raw.github.com/subtlepatterns/SubtlePatterns/master/',
     patterns = [],
-    page     = 0;
+    page     = 0,
+    selector;
 
 chrome.extension.onMessage.addListener(function(message, info, cb) {
     if (message == 'getPatterns') {
@@ -10,8 +11,9 @@ chrome.extension.onMessage.addListener(function(message, info, cb) {
         });
     }
     else if (message.pattern) {
+        selector = message.selector||'body';
         chrome.tabs.insertCSS({
-                code: 'body { background-image: url(' + raw_url + message.pattern + ') !important; }'
+                code: selector + ' { background-image: url(' + raw_url + message.pattern + ') !important; }'
         });
     }
     else if (message.page) {

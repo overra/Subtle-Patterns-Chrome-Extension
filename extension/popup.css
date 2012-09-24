@@ -2,14 +2,24 @@ body {
     background: #f0f0f0;
     font-family: Helvetica, sans-serif;
     font-size: 10pt;
-    height: 215px;
+    height: 245px;
     margin: 5px;
     padding: 0px;
-    width: 255px;
+    width: 265px;
+}
+
+.target {
+    height: 25px;
+}
+
+.target #target {
+    outline: none;
+    width: 167px;
 }
 
 #patterns {
     height: 195px;
+    position: relative;
 }
 
 .pattern {
@@ -33,13 +43,14 @@ body {
 
 #details {
     position: relative;
-    height: 20px;
+    height: 25px;
 }
 
 #details button,
 #details div {
     outline: none;
     position: absolute;
+    top: 4px;
 }
 
 #details #prev {
