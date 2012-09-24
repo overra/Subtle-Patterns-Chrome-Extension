@@ -1,6 +1,6 @@
 {
     "name": "Subtle Patterns Preview",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "manifest_version": 2,
     "description": "Preview patterns from Subtle Patterns as page background.",
     "icons": {
@@ -12,9 +12,10 @@
     },
     "browser_action": {
         "default_icon": "icon-32.png",
-        "default_title": "Subtle Patterns",
+        "default_title": "Subtle Patterns Preview",
         "default_popup": "popup.html"
     },
+    "homepage_url": "https://github.com/overra/Subtle-Patterns-Chrome-Extension",
     "content_security_policy": "script-src 'self' https://api.github.com; object-src 'self'",
     "permissions": [
         "tabs",
