@@ -1,4 +1,4 @@
-var raw_url = 'https://raw.github.com/subtlepatterns/SubtlePatterns/master/',
+var raw_url = 'https://raw.github.com/subtlepatterns/SubtlePatterns/gh-pages/',
     patterns_div = document.getElementById('patterns'),
     name_div     = document.getElementById('name'),
     next_btn     = document.getElementById('next'),
@@ -12,7 +12,7 @@ var raw_url = 'https://raw.github.com/subtlepatterns/SubtlePatterns/master/',
 
 function loadPatterns() {
 
-    var pattern, 
+    var pattern,
         file,
         start = page * 12,
         end   = start + 12;
@@ -61,7 +61,7 @@ function loadPatterns() {
             selected = this;
             selectedName = this.getAttribute('data-name');
             chrome.extension.sendMessage({
-                pattern: selectedName, 
+                pattern: selectedName,
                 selector: target_div.value,
             });
         };
@@ -72,12 +72,12 @@ function loadPatterns() {
 prev_btn.onclick = function() {
     page--;
     loadPatterns();
-    chrome.extension.sendMessage({page: page});    
+    chrome.extension.sendMessage({page: page});
 };
 next_btn.onclick = function() {
     page++;
     loadPatterns();
-    chrome.extension.sendMessage({page: page});    
+    chrome.extension.sendMessage({page: page});
 };
 
 chrome.extension.sendMessage('getPatterns', function(p) {
@@ -86,7 +86,7 @@ chrome.extension.sendMessage('getPatterns', function(p) {
     page         = p.page;
     pageMax      = Math.floor(patterns.length / 12);
     if (p.selector) {
-        target_div.value = p.selector;        
+        target_div.value = p.selector;
     }
 
     loadPatterns();
