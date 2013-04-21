@@ -1,4 +1,4 @@
-var raw_url  = 'https://raw.github.com/subtlepatterns/SubtlePatterns/master/',
+var raw_url  = 'https://raw.github.com/subtlepatterns/SubtlePatterns/gh-pages/',
     patterns = [],
     page     = 0,
     selector,
